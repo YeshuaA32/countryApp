@@ -1,4 +1,4 @@
-import { Component, Input, input } from '@angular/core';
+import { Component, EventEmitter, Input, input, Output } from '@angular/core';
 
 @Component({
   selector: 'search-box',
@@ -9,5 +9,12 @@ export class SearchBoxComponent {
 
   @Input()
   public placeholder: string='';
+
+  @Output()
+  public onValue = new EventEmitter<string>();
+
+  emitValue(value:string):void{
+    this.onValue.emit(value);
+  }
 
 }

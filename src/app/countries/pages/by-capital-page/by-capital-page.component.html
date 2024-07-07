@@ -5,7 +5,9 @@
     <div class="col">
         <!--Search box-->
 
-        <search-box placeholder="nuevo placeholder"></search-box>
+        <search-box placeholder="nuevo placeholder"
+        (onValue)="searchByCapital($event)"
+        ></search-box>
     </div>
 
 </div>
@@ -13,6 +15,10 @@
 <div class="row">
     <div class="col">
         <hr>
-        tabla de resultados
+        <ul>
+            <li *ngFor="let country of countries">
+                {{country.capital}} - {{country.population}}
+            </li>
+        </ul>
     </div>
 </div>
