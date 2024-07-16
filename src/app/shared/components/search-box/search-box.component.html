@@ -3,6 +3,8 @@
   class="form-control"
   (keyup)="onkeyPress(txtInput.value)"
   #txtInput
+  [value]="initialValue"
+
   >
 
   <!-- (keyup.enter)="emitValue( txtInput.value)" -->
