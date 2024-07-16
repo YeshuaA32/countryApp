@@ -5,8 +5,9 @@
     <div class="col">
         <!--Search box-->
 
-        <search-box placeholder="nuevo placeholder"
-        (onValue)="searchByCapital($event)"
+        <search-box placeholder="Buscar por  Capital"
+      
+        (onDebounce)="searchByCapital($event)"
         ></search-box>
     </div>
 
@@ -16,9 +17,8 @@
     <div class="col">
         <hr>
         <ul>
-            <li *ngFor="let country of countries">
-                {{country.capital}} - {{country.population}}
-            </li>
+            <shared-loading-spinner *ngIf="isLoading" ></shared-loading-spinner>
+            <countries-table [countries]="countries"></countries-table>
         </ul>
     </div>
 </div>
